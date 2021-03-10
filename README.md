@@ -28,7 +28,7 @@ Dan - storage
 
 Wireframe: see attached
 
-
+assets\images\Wire-Frame.png
 
 
 
@@ -36,4 +36,4 @@ Wireframe: see attached
 
 User flow: see attached
 
-
+assets\images\UserFlow.jpg
