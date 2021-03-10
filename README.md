@@ -7,7 +7,8 @@ AS A user,
 I WANT to see gifs and jokes 
 SO THAT I alleviate boredom
 
-Description: An app that generates a joke and related gif from a category selected by the user. Jokes will be supplied through JokeAPI database and gifs will be supplied from giphy.
+## description:
+ An app that generates a joke and related gif from a category selected by the user. Jokes will be supplied through JokeAPI database and gifs will be supplied from giphy.
 
 
 WHEN I gets on site, I can select a category from buttons
