@@ -26,14 +26,14 @@ James - API
 Dan - storage
 
 
-Wireframe: see attached
+Wireframe:
 
-assets\images\Wire-Frame.png
-
-
+<img src="assets\images\Wire-Frame.png" alt="Wireframe">
 
 
 
-User flow: see attached
 
-assets\images\UserFlow.jpg
+
+User flow:
+
+<img src="assets\images\UserFlow.jpg" alt="User Flow Diagram">
