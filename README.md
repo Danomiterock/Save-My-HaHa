@@ -1,39 +1,40 @@
 # Save-My-HaHa
-Allows a user to select their favorite joke or gif and save to local storage tp be retrieved later. 
-Title: Save my Haha*
 
-User Story: 
-AS A user, 
-I WANT to see gifs and jokes 
-SO THAT I alleviate boredom
+## User Story: 
+```
+AS A user,
+I WANT to see gifs and jokes,
+SO THAT I alleviate my boredom.
+```
+## Description: 
+An app that generates a joke and related gif from a category selected by the user. Jokes will be supplied through JokeAPI database and gifs will be supplied from giphy.
 
-Description: An app that generates a joke and related gif from a category selected by the user. Jokes will be supplied through JokeAPI database and gifs will be supplied from giphy.
-
-
+```
+GIVEN a Gif and Joke generator
 WHEN I gets on site, I can select a category from buttons
-THEN a joke and gif are presented,
+THEN a joke and gif from that category are presented,
 WHEN the joke and gif are presented
-THEN I will select their favorite of the two so I can view later
+THEN I can select my favorites
+WHEN I click the favorites button
+THEN I can view the selection of favorited gifs and jokes
+```
 
-CSS Framework: Foundation
-API 1: JokeAPI    https://sv443.net/jokeapi/v2/
-API 2: giphy        https://developers.giphy.com/docs/sdk
+## Technogologies:
+CSS Framework: <a href="http://getskeleton.com/">Skeleton</a>
+API 1: <a href="https://sv443.net/jokeapi/v2/">JokeAPI</a>
+API 2: <a href="https://developers.giphy.com/docs/sdk">Giphy</a>
 
-Tasks: 
-Stephanie - html/styles, functionality
-Briana - create buttons tied to each category
-James - API
+## Task/Role Breakdown:
+
+Stephanie - html/styles, functionality<br>
+Briana - create buttons tied to each category<br>
+James - API<br>
 Dan - storage
 
 
-Wireframe:
-
+## Wireframe:
 <img src="assets\images\Wire-Frame.png" alt="Wireframe">
 
-
-
-
-
-User flow:
+## User flowchart:
 
 <img src="assets\images\UserFlow.jpg" alt="User Flow Diagram">
