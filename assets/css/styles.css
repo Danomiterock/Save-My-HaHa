@@ -9,11 +9,11 @@
 }
 
 
-head {
+header {
     padding: 0;
     margin: 0;
     display: flex;
-    height: 500px;
+    
     justify-content: center;
     align-items: center;
 }
