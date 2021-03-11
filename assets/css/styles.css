@@ -1,17 +1,24 @@
-
 :root{--red:#f94144 ;
     --orange: #f9844a;
     --seagreen: #43aa8b;
     --gold: #f9c74f;
     --blue: #577590;
-
-
 }
-
-
 
 * {
     box-sizing: border-box;
+}
+
+img{
+    max-height: 300px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gifContainer {
+    height: 300px;
 }
 
 #wrapper {
