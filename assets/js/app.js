@@ -5,7 +5,7 @@ function GiphyAPICall(e) {
   //Gets the data value of the button that was clicked
   var giphyCata = $(e.target).data("val");
   //giphy API URL with our Key + query equal to the button the user clicks
-  var giphyURL = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPIKey}&q=${giphyCata}`;
+  var giphyURL = `https://api.giphy.com/v1/gifs/search?rating=pg&api_key=${giphyAPIKey}&q=${giphyCata}`;
   //calls the Giphy API
   fetch(giphyURL)
     .then((data) => data.json())
