@@ -25,13 +25,28 @@ function JokeAPICall(e) {
   //Grabs the data-joke from the clicked button
   var JokeCata = $(e.target).data("joke");
   //JokeAPI URL, no APIKey needed, blacklist added to keep returns safe for work
-  var JokeURL = `https://v2.jokeapi.dev/joke/${JokeCata}?blacklistFlags=nsfw,racist,sexist&type=single`;
+  var JokeURL = `https://v2.jokeapi.dev/joke/${JokeCata}?`;
   //calls the JokeAPI
   fetch(JokeURL)
     .then((data) => data.json())
     .then(function (jokeData) {
-      $("#testJokeHolder").text(jokeData.joke);
+      printJoke(jokeData)
     });
+  }
+  
+  // Renders our
+  function printJoke(jokeData) {
+    console.log(jokeData)
+    $("#testJokeHolder").text("");
+    $("#testJokeHolder2").text("");
+    
+    if (jokeData.joke) {
+      $("#testJokeHolder").text(jokeData.joke);
+    }
+    else {
+      $("#testJokeHolder").text(jokeData.setup);
+      $("#testJokeHolder2").text(jokeData.delivery);
+    }
 }
 
 //Adds Event listener to our category buttons, when a button is clicked invokes the GiphyAPI Function
