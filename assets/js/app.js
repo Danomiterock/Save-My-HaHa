@@ -35,13 +35,15 @@ function JokeAPICall(e) {
   
   // Renders our
   function printJoke(jokeData) {
-    console.log(jokeData)
+    // Clears our previous Jokes
     $("#testJokeHolder").text("");
     $("#testJokeHolder2").text("");
     
+    // If single-type joke is recieved from API
     if (jokeData.joke) {
       $("#testJokeHolder").text(jokeData.joke);
     }
+    //else if double-type joke
     else {
       $("#testJokeHolder").text(jokeData.setup);
       $("#testJokeHolder2").text(jokeData.delivery);
