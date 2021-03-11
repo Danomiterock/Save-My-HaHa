@@ -67,13 +67,25 @@ $(".testBtn").on(
 
 
 
-
-
-
-
-
 //User selects favorite between joke and gif
+var Giphy = "#testJokeHolder"
+var Joke = "#testJokeHolder2"
+//define storage
+var myStorage = window.localStorage
 //create event listener for both the joke and gif
+Giphy.addEventListener("click", saveGiphy(GiphyAPICall));
+Joke.addEventListener("click", saveJoke(JokeAPICall));
+//function to save gif
+function saveGiphy(GiphyAPICall){
+    preventDefault();
+    myStorage.getItem(GiphyAPICall);
+}
+//function to save Joke
+function saveJoke(JokeAPICall){
+    preventDefault();
+    myStorage.getitem(JokeAPICall);
+}
+
 //if neither is selected return to homepage
 // take input from selected button and place in an array in storage. Items in area are stored in class of joke or gif
 //create a function to recall and display favorite jokes and gifs based on which callback button is pressed. 
