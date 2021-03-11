@@ -72,6 +72,9 @@ var Giphy = "#testJokeHolder"
 var Joke = "#testJokeHolder2"
 //define storage
 var myStorage = window.localStorage
+//define items to be retrieved from storage
+var giphValue = myStorage.getItem(GiphyAPICall);
+var jokeValue = myStorage.getItem(JokeAPICall)
 //create event listener for both the joke and gif
 Giphy.addEventListener("click", saveGiphy(GiphyAPICall));
 Joke.addEventListener("click", saveJoke(JokeAPICall));
@@ -79,11 +82,13 @@ Joke.addEventListener("click", saveJoke(JokeAPICall));
 function saveGiphy(GiphyAPICall){
     preventDefault();
     myStorage.getItem(GiphyAPICall);
+    return;
 }
 //function to save Joke
 function saveJoke(JokeAPICall){
     preventDefault();
     myStorage.getitem(JokeAPICall);
+    return;
 }
 
 //if neither is selected return to homepage
