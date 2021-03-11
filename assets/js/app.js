@@ -121,7 +121,16 @@ function saveGiphy(e) {
 function saveJoke(e) {
   // myStorage.getitem(JokeAPICall);
   console.log("Save Joke");
-  return;
+  // Find the text of the joke that the user clicked on
+  var jokeText = e.target.getAttribute("text");
+  console.log(jokeText);
+  // We want to add that text to our storedJokes array that we declare on page load
+  storedJokes.push(jokeText);
+  // create a JSON stringified version of this array
+  var stringifiedData = JSON.stringify(storedJokes);
+  // Store this string in our localstorage
+  myStorage.setItem("joke", stringifiedData);
+  
 }
 ​
 //if neither is selected return to homepage
