@@ -32,7 +32,7 @@ function GiphyAPICall(e) {
   //Gets the data value of the button that was clicked
   var giphyCata = $(e.target).data("val");
   //giphy API URL with our Key + query equal to the button the user clicks
-  var giphyURL = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPIKey}&q=${giphyCata}`;
+  var giphyURL = `https://api.giphy.com/v1/gifs/search?rating=pg&api_key=${giphyAPIKey}&q=${giphyCata}`;
   //calls the Giphy API
   fetch(giphyURL)
     .then((data) => data.json())
@@ -60,18 +60,20 @@ function JokeAPICall(e) {
     });
 }
 ​
-// Renders our
+// Renders our recieved joke
 function printJoke(jokeData) {
+  // Clears our previous Jokes
   $("#testJokeHolder").text("");
 ​
+
+// If single-type joke is recieved from API
   if (jokeData.joke) {
     $("#testJokeHolder").text(jokeData.joke);
   } else {
+    //else if double-type joke
     $("#testJokeHolder").html(jokeData.setup + "<br>" + jokeData.delivery);
   }
-  // $("#testJokeHolder2").text(jokeData.delivery);
-}
-​
+  
 //Adds Event listener to our category buttons, when a button is clicked invokes the GiphyAPI Function
 $(".testBtn").on(
   "click",
@@ -142,14 +144,4 @@ function saveJoke(e) {
 ​
 //define items to be retrieved from storage
 // var giphValue = myStorage.getItem(GiphyAPICall);
-// var jokeValue = myStorage.getItem(JokeAPICall)
-
-
-
-
-
-
-
-
-
-
+// var jokeValue = myStorage.getItem(JokeAPICall);

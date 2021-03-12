@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,15 +8,23 @@
   <!-- Foundation CSS Framework -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous" />
+  <!-- Custom CSS -->
   <!-- Indie Flower Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/styles.css" />
   <!-- CSS End -->
   <title>Save My Hahas</title>
 </head>
+
 <!-- Start Placeholder HTML -->
+
+<h1>My Hahas</h1>
+<div class="btn-favs">
+  <button style="width:25%">Fav Gifs</button>
+  <button style="width:25%">Fav Jokes</button>
+</div>
+<h2>Pick a category below!</h2>
 
 <body class="text-center">
   <header>
@@ -28,49 +35,59 @@
         to view later (especially when you'd like to romain calm.)</h4>
     </div>
   </header>
-  <!-- Start Category Buttons -->
-  <div>
-    <button class="button testBtn" data-joke="Misc" data-val="Misc-funny">
-      Misc
-    </button>
-    <button class="button testBtn" data-joke="Programming" data-val="Programming-funny">
-      Programming
-    </button>
-    <button class="button testBtn" data-joke="Pun" data-val="Pun">Pun</button>
-    <button class="button testBtn" data-joke="Spooky" data-val="Spooky-funny">
-      Spooky
-    </button>
-    <button class="button testBtn" data-joke="Christmas" data-val="Christmas-funny">
-      Christmas
-    </button>
-    <button class="button testBtn" data-joke="Any" data-val="Random-funny">
-      I'm Feeling Lucky
-    </button>
+  <div id="wrapper">
+    <!-- Start Gif Holder -->
+    <div id="gifContainer">
+      <img id="testGifHolder" src="" />
+    </div>
+    <!-- End Gif Holder -->
+
+    <!-- Start Joke Holder -->
+    <div class="jokeContainer">
+      <p id="testJokeHolder"></p>
+      <br />
+      <p id="testJokeHolder2"></p>
+    </div>
+    <!-- End Joke Holder -->
+
+    <!-- Start Category Buttons -->
+    <container>
+
+      <button class="button testBtn" id="misc" data-joke="Misc" data-val="Misc-funny">
+        Misc
+      </button>
+
+      <button class="button testBtn" id="programming" data-joke="Programming" data-val="Programming-funny">
+        Programming
+      </button>
+
+      <button class="button testBtn" id="pun" data-joke="Pun" data-val="Pun">Pun</button>
+      <button class="button testBtn" id="spooky" data-joke="Spooky" data-val="Spooky-funny">
+        Spooky
+      </button>
+      <button class="button testBtn" id="christmas" data-joke="Christmas" data-val="Christmas-funny">
+        Christmas
+      </button>
+      <button class="button testBtn" id="lucky" data-joke="Any" data-val="Random-funny">
+        I'm Feeling Lucky
+      </button>
+    </container>
+
+    <!-- End Category Buttons -->
+    <!-- End Placeholder HTML -->
+
+    <!-- Javascript Start -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Foundation CSS Framework JS -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <script src="assets/js/app.js"></script>
+    <!-- Javascript End -->
   </div>
-  <!-- End Category Buttons -->
-  <!-- Start Gif Holder -->
-  <div>
-    <img id="testGifHolder" src="" />
-  </div>
-  <!-- End Gif Holder -->
-  <!-- Start Joke Holder -->
-  <div class="jokeContainer">
-    <p id="testJokeHolder"></p>
-  </div>
-  <!-- End Joke Holder -->
-  <!-- End Placeholder HTML -->
-  ​
-  <!-- Javascript Start -->
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!-- jQuery UI -->
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <!-- Foundation CSS Framework JS -->
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <!-- Custom CSS -->
-  <script src="assets/js/app.js"></script>
-  <!-- Javascript End -->
 </body>
 
 </html>

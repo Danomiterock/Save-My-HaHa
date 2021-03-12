@@ -5,6 +5,13 @@
   border-radius: 3px;
 }
 
+:root{--red:#f94144 ;
+    --orange: #f9844a;
+    --seagreen: #43aa8b;
+    --gold: #f9c74f;
+    --blue: #577590;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -77,3 +84,69 @@ body {
     height: auto;
     width: auto;
 } 
+img{
+    max-height: 300px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gifContainer {
+    height: 300px;
+}
+
+#wrapper {
+    margin:0 auto;
+    width: 1000px;
+}
+
+
+header {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testBtn {
+    padding: 5px;
+    margin: 10px;
+    border: 1px black solid;
+    border-radius: 3px;
+}
+
+#misc {
+    background-color: var(--blue);
+    border-radius: 12px;
+}
+
+#christmas{
+    background-color: var(--red);
+    border-radius: 12px;
+}
+
+#programming {
+    background-color: var(--seagreen);
+    border-radius: 12px;
+    color:black;
+}
+
+#pun{
+    background-color: lightcoral;
+    border-radius: 12px;
+}
+
+#spooky{
+    background-color:var(--orange);
+    color:black;
+    border-radius: 12px;
+    
+}
+
+#lucky{
+    background-color: var(--gold);
+    border-radius: 12px;
+    color:black;
+}
