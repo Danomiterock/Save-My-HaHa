@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,21 +20,19 @@
 
 <!-- Start Placeholder HTML -->
 
-<h1>My Hahas</h1>
-<div class="btn-favs">
-  <button style="width:25%">Fav Gifs</button>
-  <button style="width:25%">Fav Jokes</button>
-</div>
-<h2>Pick a category below!</h2>
+ <!-- <h1>My Hahas</h1> -->
 
-<body class="text-center">
+<!-- <h2>Pick a category below!</h2>  -->
+
+<body class="text-center" id="test">
   <header>
-
-    <div class="titleSection" id="background">
-      <h1 class="title"><strong>Save My Hahas</strong> </h1>
-      <h4 class="description">Need a laugh? Click one of the category buttons below to get a joke and gif. Save your
-        favorite
-        to view later (especially when you'd like to romain calm.)</h4>
+    <div class="container">
+      <h1><strong>Save My Hahas</strong> </h1>
+      <p class="description">Need a laugh? Click one of the category buttons below to get a joke and gif. 
+        <br>
+        Tap or click to save your
+        favorite jokes or gifs
+        to view later (especially when you'd like to romain calm.)</p>
     </div>
   </header>
   
@@ -53,8 +52,8 @@
     <!-- End Joke Holder -->
 
     <!-- Start Category Buttons -->
-    <div class ="btnContainer">
-
+    <div class = "btnContainer">
+      
       <button class="button testBtn" id="misc" data-joke="Misc" data-val="Misc-funny">
         Misc
       </button>
@@ -74,6 +73,11 @@
         I'm Feeling Lucky
       </button>
     </div>
+    <br>
+    <div class="btn-favs">
+      <button style="width:25%" id="testGifHolder">Show me my favorite gifs</button>
+      <button style="width:25%" id="testJokeHolder">Show me my favorite jokes</button>
+    </div>
 
     <!-- End Category Buttons -->
     <!-- End Placeholder HTML -->
@@ -87,7 +91,7 @@
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
       integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
-    <script src="app.js"></script>
+    <script src="./assets/js/app.js"></script>
     <!-- Javascript End -->
   </div>
 </body>

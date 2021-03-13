@@ -111,7 +111,6 @@ function saveGiphy(e) {
   // Store this string in our localstorage
   myStorage.setItem("gifs", stringifiedData);
 }
-
 //function to save Joke
 function saveJoke(e) {
   // myStorage.getitem(JokeAPICall);
