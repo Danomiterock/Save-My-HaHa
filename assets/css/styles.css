@@ -26,7 +26,7 @@
   justify-content: center;
 }
 
-.title {
+.title-section {
   font-family: "Indie Flower", cursive;
   font-size: 85px;
   /* background-color: rgba(0, 0, 0, 0);
@@ -141,3 +141,15 @@ img {
   border-radius: 12px;
   color: black;
 }
+
+/* body {
+  background-color: white;
+  color: black;
+}
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(7, 7, 7);
+    color: white;
+  }
+} */
+
