@@ -92,7 +92,7 @@ function printJoke(jokeData) {
     $("#testJokeHolder").text(jokeData.joke);
   } else {
     //else if double-type joke
-    $("#testJokeHolder").html(jokeData.setup + "<br>" + jokeData.delivery);
+    $("#testJokeHolder").html(jokeData.setup + " "+ jokeData.delivery);
   }
 }
 
@@ -116,7 +116,7 @@ function saveJoke(e) {
   // myStorage.getitem(JokeAPICall);
   console.log("Save Joke");
   // Find the text of the joke that the user clicked on
-  var jokeText = e.target.getAttribute("text");
+  var jokeText = e.target.innerHTML;
   console.log(jokeText);
   // We want to add that text to our storedJokes array that we declare on page load
   storedJokes.push(jokeText);
@@ -125,12 +125,19 @@ function saveJoke(e) {
   // Store this string in our localstorage
   myStorage.setItem("joke", stringifiedData);
 }
+
+
+//Instructions for DAN
+
+//When creating the local storage retrieval target the element $<"#myFavGif"> and $<"#myFavJoke"> (that element wont exist just yet until Bri/Steph update the HTML side of things) Have your stuff output to there and we'll tie it all up later. The favorite buttons don't have their ID's setup yet, but their ids will be fav-gifs-LS and fav-jokes-LS
+
 //if neither is selected return to homepage
 // take input from selected button and place in an array in storage. Items in area are stored in class of joke or gif
 //create a function to recall and display favorite jokes and gifs based on which callback button is pressed.
 //ensure array of favorites is displayed in a formatted container
 //call class and append to hidden favorites container
-//Giphy API Key, delete after assignment
+
+
 //define items to be retrieved from storage
 // var giphValue = myStorage.getItem(GiphyAPICall);
 // var jokeValue = myStorage.getItem(JokeAPICall);

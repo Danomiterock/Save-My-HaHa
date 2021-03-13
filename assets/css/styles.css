@@ -1,5 +1,4 @@
-:root {
-  --red: #f94144;
+:root{--red:#f94144 ;
   --orange: #f9844a;
   --seagreen: #43aa8b;
   --gold: #f9c74f;
@@ -7,15 +6,25 @@
 }
 
 * {
-  box-sizing: border-box;
-}
-body {
-  padding: 10px;
-  margin: 10px;
-  background-color: rgb(245, 250, 240);
+box-sizing:border-box;
+/* width: 100%; */
+/* display: flex;
+justify-content: center; */
+
 }
 
-.title-section {
+body {
+  position: absolute;
+  margin: 0;
+  /* padding: 10px;
+  margin: 10px; */
+  background-color: rgb(245, 250, 240);
+}
+#test{
+  text-align: center;
+  width: 100%;
+}
+h1 {
   font-family: "Indie Flower", cursive;
   font-size: 65px;
   color: black;
@@ -29,11 +38,13 @@ body {
   text-align: center;
  }
 
-
 .jokeContainer {
   height: 25%;
   width: 70%;
   display: block;
+  margin-left:auto;
+  margin-right:auto;
+  float :none;
 }
 
 #testJokeHolder {
@@ -49,24 +60,43 @@ body {
   height: auto;
   width: auto;
 }
+
 img {
   max-height: 300px;
   width: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  float: none;
 }
 
+
 #gifContainer {
-  height: 300px;
+  height: 300px; 
 }
 
 #wrapper {
-  margin: 0 auto;
-  width: 1000px;
+padding: 0;
+margin: 0 auto;
+width: 1000px;
+margin-left:auto;
+margin-right:auto;
+float :none;
 }
 
 
+/* header {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.btnContainer{
+margin: 0 auto;
+display: block;
+}
 
 .testBtn {
   padding: 5px;
@@ -80,7 +110,7 @@ img {
   border-radius: 12px;
 }
 
-#christmas {
+#christmas{
   background-color: var(--red);
   border-radius: 12px;
 }
@@ -88,34 +118,22 @@ img {
 #programming {
   background-color: var(--seagreen);
   border-radius: 12px;
-  color: black;
+  color:black;
 }
 
-#pun {
+#pun{
   background-color: lightcoral;
   border-radius: 12px;
 }
 
-#spooky {
-  background-color: var(--orange);
-  color: black;
+#spooky{
+  background-color:var(--orange);
+  color:black;
   border-radius: 12px;
 }
 
-#lucky {
+#lucky{
   background-color: var(--gold);
   border-radius: 12px;
-  color: black;
+  color:black;
 }
-
-/* body {
-  background-color: white;
-  color: black;
-}
-@media screen and (prefers-color-scheme: dark) {
-  body {
-    background-color: rgb(7, 7, 7);
-    color: white;
-  }
-} */
-
