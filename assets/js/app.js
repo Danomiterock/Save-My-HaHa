@@ -26,13 +26,24 @@ var displayNewContent = $("#reset");
 // Event listeners on our "Show me" buttons.
 displayFavGifs.on("click", function () {
   hideNewContent();
+  showFavoriteDisplay();
+  hideFavJokeContainer();
+  showFavGifContainer();
 });
 
 displayFavJokes.on("click", function () {
   hideNewContent();
+  showFavoriteDisplay();
+  hideFavGifContainer();
+  showFavJokeContainer();
 });
 
-displayNewContent.on("click", function () {});
+displayNewContent.on("click", function () {
+  hideFavGifContainer();
+  hideFavJokeContainer();
+  hideFavJokeContainer();
+  showNewContent();
+});
 
 //Adds Event listener to our category buttons, when a button is clicked invokes the GiphyAPI and JokeAPI Functions.
 submitBtn.on("click", function (e) {
@@ -145,21 +156,49 @@ function initializeArray() {
   }
 }
 
-// Hides our screen elements except for the header
+// Hides our main screen elements except for the title header
 function hideNewContent() {
   $("#intro").addClass("hidden");
   $("#contentWrapper").addClass("hidden");
 }
 
+// Shows our main screen elements
 function showNewContent() {
   $("#intro").removeClass("hidden");
   $("#contentWrapper").removeClass("hidden");
 }
 
-function showFavoriteDisplay() {}
+// hides our favorites content container
+function hideFavoriteDisplay() {
+  $("#favorites-display").addClass("hidden");
+}
 
-function hideFavoriteDisplay() {}
+// shows our favorites content container
+function showFavoriteDisplay() {
+  $("#favorites-display").removeClass("hidden");
+}
 
+function hideFavGifContainer() {
+  $("#myFavGif").addClass("hidden");
+  // Clears out the gif container when we hide it so the next time it's loaded we don't get duplicates
+  $("myFavGif").empty();
+}
+
+function showFavGifContainer() {
+  $("#myFavGif").removeClass("hidden");
+}
+
+function hideFavJokeContainer() {
+  $("#myFavJoke").addClass("hidden");
+  // Clears out the joke container when we hide it so the next time it's loaded we don't get duplicates
+  $("myFavJoke").empty();
+}
+
+function showFavJokeContainer() {
+  $("#myFavJoke").removeClass("hidden");
+}
+
+//runs our initialize array function on page load
 initializeArray();
 
 //Instructions for DAN
