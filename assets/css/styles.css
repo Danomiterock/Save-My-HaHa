@@ -75,7 +75,7 @@ img {
   height: 300px; 
 }
 
-#wrapper {
+.wrapper {
 padding: 0;
 margin: 0 auto;
 width: 1000px;
@@ -127,4 +127,8 @@ display: block;
   background-color: var(--gold);
   border-radius: 12px;
   color:black;
+}
+
+.hidden {
+  display: none;
 }
