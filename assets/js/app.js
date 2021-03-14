@@ -125,6 +125,7 @@ function saveJoke(e) {
   var stringifiedData = JSON.stringify(storedJokes);
   // Store this string in our localstorage
   myStorage.setItem("joke", stringifiedData);
+  if ()
 }
 
 //target value if joke and gif
