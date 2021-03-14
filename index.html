@@ -34,7 +34,7 @@
     <header>
       <div class="container">
         <h1><strong>Save My Hahas</strong></h1>
-        <p class="description">
+        <p id="intro" class="description">
           Need a laugh? Click one of the category buttons below to get a joke
           and gif.
           <br />
@@ -44,7 +44,7 @@
       </div>
     </header>
 
-    <div id="wrapper">
+    <div id="contentWrapper" class="wrapper">
       <!-- Start Gif Holder -->
       <div id="gifContainer">
         <img id="testGifHolder" src="" />
@@ -109,51 +109,50 @@
       </div>
       <br />
       <div id="save2fav">
-        <button id="fav-jokes-LS">Save this Joke</button> 
-        <button id="fav-gifs-LS">Save this Gif</button> 
+        <button id="fav-jokes-LS">Save this Joke</button>
+        <button id="fav-gifs-LS">Save this Gif</button>
       </div>
       <br />
       <div class="btn-favs">
-        <button style="width: 25%" id="saved-gif" > 
+        <button style="width: 25%" id="saved-gif">
           Show me my favorite gifs.
         </button>
-        <button style="width: 25%" id="saved-joke"> 
+        <button style="width: 25%" id="saved-joke">
           Show me my favorite jokes.
         </button>
         <button style="width: 25%" id="reset">Show me something new.</button>
       </div>
-      <div id="favorites-display">
-        <div id="myFavGif" class="hidden">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-          cumque distinctio dolorum modi laborum adipisci optio ex minima sed
-          repudiandae, qui sit quibusdam sequi reprehenderit molestias tempora
-          eligendi, facilis quos.
-        </div>
-        <div id="myFavJoke" class="hidden">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut illo
-          deserunt, pariatur hic nostrum voluptates dolore, illum dolorum animi
-          exercitationem accusantium doloribus excepturi earum tempore dolores
-          ducimus odit fugiat iure!
-        </div>
-      </div>
-
-      <!-- End Category Buttons -->
-      <!-- End Placeholder HTML -->
-
-      <!-- Javascript Start -->
-      <!-- jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-      <!-- jQuery UI -->
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-      <!-- Foundation CSS Framework JS -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
-        crossorigin="anonymous"
-      ></script>
-      <!-- Custom CSS -->
-      <script src="./assets/js/app.js"></script>
-      <!-- Javascript End -->
     </div>
+    <div id="favorites-display" class="wrapper">
+      <div id="myFavGif" class="hidden">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia cumque
+        distinctio dolorum modi laborum adipisci optio ex minima sed
+        repudiandae, qui sit quibusdam sequi reprehenderit molestias tempora
+        eligendi, facilis quos.
+      </div>
+      <div id="myFavJoke" class="hidden">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut illo
+        deserunt, pariatur hic nostrum voluptates dolore, illum dolorum animi
+        exercitationem accusantium doloribus excepturi earum tempore dolores
+        ducimus odit fugiat iure!
+      </div>
+    </div>
+    <!-- End Category Buttons -->
+    <!-- End Placeholder HTML -->
+
+    <!-- Javascript Start -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Foundation CSS Framework JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom CSS -->
+    <script src="./assets/js/app.js"></script>
+    <!-- Javascript End -->
   </body>
 </html>
