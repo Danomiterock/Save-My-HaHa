@@ -127,6 +127,9 @@ function saveJoke(e) {
   myStorage.setItem("joke", stringifiedData);
 }
 
+//target value if joke and gif
+var saveFavJokes = document.getElementById("fav-jokes-LS")
+var saveFaveGifs = document.getElementById("fav-gifs-LS")
 
 //Instructions for DAN
 
