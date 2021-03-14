@@ -45,6 +45,12 @@ h1 {
   margin-left:auto;
   margin-right:auto;
   float :none;
+  border: 2px solid gray;
+}
+
+.jokeContainer:hover {
+    background: #e1e1e1;
+    box-shadow: 0 0 0 2px #d0d0d0;
 }
 
 #testJokeHolder {
@@ -62,12 +68,17 @@ h1 {
 }
 
 img {
-  max-height: 300px;
+  max-height: 250px;
   width: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
   float: none;
+}
+
+img:hover {
+    background: #e1e1e1;
+    box-shadow: 0 0 0 5px #90be6d;
 }
 
 
@@ -131,4 +142,45 @@ display: block;
 
 .hidden {
   display: none;
+}
+
+
+#fav-jokes-LS {
+    background-color:#90be6d;
+    border-radius: 50%;
+    padding: 12px 22px;
+    border: 1px solid black;
+}
+
+#fav-gifs-LS {
+    background-color:#90be6d;
+    border-radius: 50%;
+    padding: 12px 22px;
+    margin-left: 50px;
+    border: 1px solid black;
+}
+
+
+#saved-gif{
+    background-color:#277da1;
+    border-radius: 12px;
+    padding: 12px 22px;
+    border: 1px solid black;
+    color:white;
+}
+
+#saved-joke{
+    background-color:#277da1;
+    border-radius: 12px;
+    padding: 12px 22px;
+    border: 1px solid black;
+    color: white;
+}
+
+#reset{
+    background-color:#277da1;
+    border-radius: 12px;
+    padding: 12px 22px;
+    border: 1px solid black;
+    color: white;
 }
