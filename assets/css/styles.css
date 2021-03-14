@@ -6,24 +6,19 @@
 }
 
 * {
-box-sizing: border-box;
+box-sizing:border-box;
+/* width: 100%; */
+/* display: flex;
+justify-content: center; */
 
 }
 
-#background {
-background: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg")
-  50% no-repeat;
-background-size: cover;
-/* opacity: 0.5;
-filter: blur(3px); */
-height: 45vh;
-display: flex;
--webkit-align-items: center;
--ms-flex-align: center;
-align-items: center;
--webkit-justify-content: center;
--ms-flex-pack: center;
-justify-content: center;
+body {
+  position: absolute;
+  margin: 0;
+  /* padding: 10px;
+  margin: 10px; */
+  background-color: rgb(245, 250, 240);
 }
 #test{
   text-align: center;
@@ -50,6 +45,12 @@ h1 {
   margin-left:auto;
   margin-right:auto;
   float :none;
+  border: 2px solid gray;
+}
+
+.jokeContainer:hover {
+    background: #e1e1e1;
+    box-shadow: 0 0 0 2px #d0d0d0;
 }
 
 #testJokeHolder {
@@ -67,12 +68,17 @@ h1 {
 }
 
 img {
-  max-height: 300px;
+  max-height: 250px;
   width: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
   float: none;
+}
+
+img:hover {
+    background: #e1e1e1;
+    box-shadow: 0 0 0 5px #90be6d;
 }
 
 
@@ -136,4 +142,45 @@ display: block;
 
 .hidden {
   display: none;
+}
+
+
+#fav-jokes-LS {
+    background-color:#90be6d;
+    border-radius: 50%;
+    padding: 12px 22px;
+    border: 1px solid black;
+}
+
+#fav-gifs-LS {
+    background-color:#90be6d;
+    border-radius: 50%;
+    padding: 12px 22px;
+    margin-left: 50px;
+    border: 1px solid black;
+}
+
+
+#saved-gif{
+    background-color:#277da1;
+    border-radius: 12px;
+    padding: 12px 22px;
+    border: 1px solid black;
+    color:white;
+}
+
+#saved-joke{
+    background-color:#277da1;
+    border-radius: 12px;
+    padding: 12px 22px;
+    border: 1px solid black;
+    color: white;
+}
+
+#reset{
+    background-color:#277da1;
+    border-radius: 12px;
+    padding: 12px 22px;
+    border: 1px solid black;
+    color: white;
 }
