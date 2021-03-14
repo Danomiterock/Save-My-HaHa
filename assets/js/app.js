@@ -214,3 +214,8 @@ initializeArray();
 //define items to be retrieved from storage
 // var giphValue = myStorage.getItem(GiphyAPICall);
 // var jokeValue = myStorage.getItem(JokeAPICall);
+// var saveFavJokes = document.getElementById("fav-jokes-LS"); 
+// var saveFaveGifs = document.getElementById("fav-gifs-LS");
+
+// saveFavJokes.on("click", saveJoke);
+// saveFaveGifs.on("click", saveGiphy);
