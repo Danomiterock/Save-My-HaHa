@@ -12,34 +12,24 @@ var myStorage = window.localStorage;
 var storedGifs = myStorage.getItem("gifs");
 var storedJokes = myStorage.getItem("jokes");
 
-// Variables target the printed joke/gif
-var joke = $("#testJokeHolder");
-var giphy = $("#testGifHolder");
+// Variables target the save to favorites buttons
+var joke = $("#save-Joke");
+var giphy = $("#save-Gif");
 
-//Initializes our Gif storage array
-if (storedGifs) {
-  // if our array exists in local storage. pull it
-  storedGifs = JSON.parse(storedGifs);
-} else {
-  //if it doesn't exist, create a blank array
-  storedGifs = [];
-}
+//Variables to change screens to favorites/new content
+var displayFavGifs = $("#fav-gifs-LS")
+var displayFavJokes = $("#fav-jokes-LS")
+var displayNewContent =$("#reset")
 
-//Initializes our Joke storage array
-if (storedJokes) {
-  // if our array exists in local storage. pull it
-  storedJokes = JSON.parse(storedJokes);
-} else {
-  // if it doesn't exist, create a blank array
-  storedJokes = [];
-}
+
 
 //Event Listeners
 
-//Adds Event listener to our category buttons, when a button is clicked invokes the GiphyAPI Function
-submitBtn.on("click", GiphyAPICall);
-//Adds Event Listener to our category buttons, when a button is clicked invokes the JokeAPI Function.
-submitBtn.on("click", JokeAPICall);
+//Adds Event listener to our category buttons, when a button is clicked invokes the GiphyAPI and JokeAPI Functions.
+submitBtn.on("click", function(e) {
+  GiphyAPICall(e);
+  JokeAPICall(e);
+});
 
 //Adds Event Listener on our Gif element
 giphy.on("click", saveGiphy);
@@ -76,17 +66,17 @@ function JokeAPICall(e) {
   var JokeURL = `https://v2.jokeapi.dev/joke/${JokeCata}?blacklist=nsfw,sexist,racist`;
   //calls the JokeAPI
   fetch(JokeURL)
-    .then((data) => data.json())
-    .then(function (jokeData) {
-      printJoke(jokeData);
-    });
+  .then((data) => data.json())
+  .then(function (jokeData) {
+    printJoke(jokeData);
+  });
 }
 
 // Renders our recieved joke
 function printJoke(jokeData) {
   // Clears our previous Jokes
   $("#testJokeHolder").text("");
-
+  
   // If single-type joke is recieved from API
   if (jokeData.joke) {
     $("#testJokeHolder").text(jokeData.joke);
@@ -126,6 +116,27 @@ function saveJoke(e) {
   myStorage.setItem("joke", stringifiedData);
 }
 
+//Initializes our Gif storage array
+function initializeArray() {
+  if (storedGifs) {
+    // if our array exists in local storage. pull it
+    storedGifs = JSON.parse(storedGifs);
+  } else {
+    //if it doesn't exist, create a blank array
+    storedGifs = [];
+  }
+  
+  //Initializes our Joke storage array
+  if (storedJokes) {
+    // if our array exists in local storage. pull it
+    storedJokes = JSON.parse(storedJokes);
+  } else {
+    // if it doesn't exist, create a blank array
+    storedJokes = [];
+  }
+}
+
+initializeArray()
 
 //Instructions for DAN
 
