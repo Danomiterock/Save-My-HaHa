@@ -75,7 +75,7 @@ img {
   height: 300px; 
 }
 
-#wrapper {
+.wrapper {
 padding: 0;
 margin: 0 auto;
 width: 1000px;
@@ -131,8 +131,4 @@ display: block;
 
 .hidden {
   display: none;
-}
-
-.noOpacity{
-  opacity: 0%;
 }
