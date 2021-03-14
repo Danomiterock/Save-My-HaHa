@@ -107,33 +107,34 @@ function printJoke(jokeData) {
 }
 
 //function to save gif
-function saveGiphy(e) {
-  console.log(e);
-  // e.target is going to be the img that is storing our gif
+function saveGiphy() {
   // Find the src of the image that the user clicked on
   var gifURL = gifHolder.attr("src");
   console.log(gifURL);
-  // We want to add that src to our storedGifs array that we declare on page load
+  //Check to see if this gif is already a part of our array
+  if (storedGifs.indexOf(gifURL) === -1) {
+    // We want to add that src to our storedGifs array that we declare on page load
   storedGifs.push(gifURL);
   // create a JSON stringified version of this array
   var stringifiedData = JSON.stringify(storedGifs);
   // Store this string in our localstorage
   myStorage.setItem("gifs", stringifiedData);
-}
+}}
+
 //function to save Joke
-function saveJoke(e) {
+function saveJoke() {
   // myStorage.getitem(JokeAPICall);
   console.log("Save Joke");
   // Find the text of the joke that the user clicked on
   var jokeText = jokeHolder.text();
-  console.log(jokeText);
+  if (storedJokes.indexOf(jokeText) === -1) {
   // We want to add that text to our storedJokes array that we declare on page load
   storedJokes.push(jokeText);
   // create a JSON stringified version of this array
   var stringifiedData = JSON.stringify(storedJokes);
   // Store this string in our localstorage
   myStorage.setItem("joke", stringifiedData);
-}
+}}
 
 //Function to initialize our arrays
 function initializeArray() {
