@@ -17,28 +17,25 @@ var joke = $("#fav-jokes-LS");
 var giphy = $("#fav-gifs-LS");
 
 //Variables to change screens to favorites/new content
-var displayFavGifs = $("#saved-gif")
-var displayFavJokes = $("#saved-joke")
-var displayNewContent =$("#reset")
-
-
+var displayFavGifs = $("#saved-gif");
+var displayFavJokes = $("#saved-joke");
+var displayNewContent = $("#reset");
 
 //Event Listeners
 
 // Event listeners on our "Show me" buttons.
-displayFavGifs.on("click", function() {
+displayFavGifs.on("click", function () {
+  hideNewContent();
+});
 
-})
+displayFavJokes.on("click", function () {
+  hideNewContent();
+});
 
-displayFavJokes.on("click", function() {
-
-})
-
-displayNewContent.on("click", )
-
+displayNewContent.on("click", function () {});
 
 //Adds Event listener to our category buttons, when a button is clicked invokes the GiphyAPI and JokeAPI Functions.
-submitBtn.on("click", function(e) {
+submitBtn.on("click", function (e) {
   GiphyAPICall(e);
   JokeAPICall(e);
 });
@@ -59,15 +56,15 @@ function GiphyAPICall(e) {
   var giphyURL = `https://api.giphy.com/v1/gifs/search?rating=pg&api_key=${giphyAPIKey}&q=${giphyCata}`;
   //calls the Giphy API
   fetch(giphyURL)
-  .then((data) => data.json())
-  .then(function (giphyData) {
-    // Makes sure we get a random gif
-    var i = Math.floor(Math.random() * giphyData.data.length);
-    //variable for the random gifs hosted url
-    var gif = giphyData.data[i].images.original.url;
-    //sets our placeholder element to the gifs source, displaying it.
-    gifHolder.attr("src", gif);
-  });
+    .then((data) => data.json())
+    .then(function (giphyData) {
+      // Makes sure we get a random gif
+      var i = Math.floor(Math.random() * giphyData.data.length);
+      //variable for the random gifs hosted url
+      var gif = giphyData.data[i].images.original.url;
+      //sets our placeholder element to the gifs source, displaying it.
+      gifHolder.attr("src", gif);
+    });
 }
 
 //Reaches out to the Joke API
@@ -78,26 +75,25 @@ function JokeAPICall(e) {
   var JokeURL = `https://v2.jokeapi.dev/joke/${JokeCata}?blacklist=nsfw,sexist,racist`;
   //calls the JokeAPI
   fetch(JokeURL)
-  .then((data) => data.json())
-  .then(function (jokeData) {
-    printJoke(jokeData);
-  });
+    .then((data) => data.json())
+    .then(function (jokeData) {
+      printJoke(jokeData);
+    });
 }
 
 // Renders our recieved joke
 function printJoke(jokeData) {
   // Clears our previous Jokes
   $("#testJokeHolder").text("");
-  
+
   // If single-type joke is recieved from API
   if (jokeData.joke) {
     $("#testJokeHolder").text(jokeData.joke);
   } else {
     //else if double-type joke
-    $("#testJokeHolder").html(jokeData.setup + " "+ jokeData.delivery);
+    $("#testJokeHolder").html(jokeData.setup + " " + jokeData.delivery);
   }
 }
-
 
 //function to save gif
 function saveGiphy(e) {
@@ -130,7 +126,6 @@ function saveJoke(e) {
 
 //Function to initialize our arrays
 function initializeArray() {
-
   //Initializes our Gif storage array
   if (storedGifs) {
     // if our array exists in local storage. pull it
@@ -139,7 +134,7 @@ function initializeArray() {
     //if it doesn't exist, create a blank array
     storedGifs = [];
   }
-  
+
   //Initializes our Joke storage array
   if (storedJokes) {
     // if our array exists in local storage. pull it
@@ -150,7 +145,22 @@ function initializeArray() {
   }
 }
 
-initializeArray()
+// Hides our screen elements except for the header
+function hideNewContent() {
+  $("#intro").addClass("hidden");
+  $("#contentWrapper").addClass("hidden");
+}
+
+function showNewContent() {
+  $("#intro").removeClass("hidden");
+  $("#contentWrapper").removeClass("hidden");
+}
+
+function showFavoriteDisplay() {}
+
+function hideFavoriteDisplay() {}
+
+initializeArray();
 
 //Instructions for DAN
 
@@ -161,7 +171,6 @@ initializeArray()
 //create a function to recall and display favorite jokes and gifs based on which callback button is pressed.
 //ensure array of favorites is displayed in a formatted container
 //call class and append to hidden favorites container
-
 
 //define items to be retrieved from storage
 // var giphValue = myStorage.getItem(GiphyAPICall);
