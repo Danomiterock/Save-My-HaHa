@@ -12,44 +12,34 @@ var myStorage = window.localStorage;
 var storedGifs = myStorage.getItem("gifs");
 var storedJokes = myStorage.getItem("jokes");
 
-// Variables target the save to favorites buttons
-var joke = $("#fav-jokes-LS");
-var giphy = $("#fav-gifs-LS");
+// Variables target the printed joke/gif
+var joke = $("#testJokeHolder");
+var giphy = $("#testGifHolder");
 
-//Variables to change screens to favorites/new content
-var displayFavGifs = $("#saved-gif");
-var displayFavJokes = $("#saved-joke");
-var displayNewContent = $("#reset");
+//Initializes our Gif storage array
+if (storedGifs) {
+  // if our array exists in local storage. pull it
+  storedGifs = JSON.parse(storedGifs);
+} else {
+  //if it doesn't exist, create a blank array
+  storedGifs = [];
+}
+
+//Initializes our Joke storage array
+if (storedJokes) {
+  // if our array exists in local storage. pull it
+  storedJokes = JSON.parse(storedJokes);
+} else {
+  // if it doesn't exist, create a blank array
+  storedJokes = [];
+}
 
 //Event Listeners
 
-// Event listeners on our "Show me" buttons.
-displayFavGifs.on("click", function () {
-  hideNewContent();
-  showFavoriteDisplay();
-  hideFavJokeContainer();
-  showFavGifContainer();
-});
-
-displayFavJokes.on("click", function () {
-  hideNewContent();
-  showFavoriteDisplay();
-  hideFavGifContainer();
-  showFavJokeContainer();
-});
-
-displayNewContent.on("click", function () {
-  hideFavGifContainer();
-  hideFavJokeContainer();
-  hideFavJokeContainer();
-  showNewContent();
-});
-
-//Adds Event listener to our category buttons, when a button is clicked invokes the GiphyAPI and JokeAPI Functions.
-submitBtn.on("click", function (e) {
-  GiphyAPICall(e);
-  JokeAPICall(e);
-});
+//Adds Event listener to our category buttons, when a button is clicked invokes the GiphyAPI Function
+submitBtn.on("click", GiphyAPICall);
+//Adds Event Listener to our category buttons, when a button is clicked invokes the JokeAPI Function.
+submitBtn.on("click", JokeAPICall);
 
 //Adds Event Listener on our Gif element
 giphy.on("click", saveGiphy);
@@ -67,15 +57,15 @@ function GiphyAPICall(e) {
   var giphyURL = `https://api.giphy.com/v1/gifs/search?rating=pg&api_key=${giphyAPIKey}&q=${giphyCata}`;
   //calls the Giphy API
   fetch(giphyURL)
-    .then((data) => data.json())
-    .then(function (giphyData) {
-      // Makes sure we get a random gif
-      var i = Math.floor(Math.random() * giphyData.data.length);
-      //variable for the random gifs hosted url
-      var gif = giphyData.data[i].images.original.url;
-      //sets our placeholder element to the gifs source, displaying it.
-      gifHolder.attr("src", gif);
-    });
+  .then((data) => data.json())
+  .then(function (giphyData) {
+    // Makes sure we get a random gif
+    var i = Math.floor(Math.random() * giphyData.data.length);
+    //variable for the random gifs hosted url
+    var gif = giphyData.data[i].images.original.url;
+    //sets our placeholder element to the gifs source, displaying it.
+    gifHolder.attr("src", gif);
+  });
 }
 
 //Reaches out to the Joke API
@@ -102,16 +92,17 @@ function printJoke(jokeData) {
     $("#testJokeHolder").text(jokeData.joke);
   } else {
     //else if double-type joke
-    $("#testJokeHolder").html(jokeData.setup + " " + jokeData.delivery);
+    $("#testJokeHolder").html(jokeData.setup + " "+ jokeData.delivery);
   }
 }
+
 
 //function to save gif
 function saveGiphy(e) {
   console.log(e);
   // e.target is going to be the img that is storing our gif
   // Find the src of the image that the user clicked on
-  var gifURL = gifHolder.attr("src");
+  var gifURL = e.target.getAttribute("src");
   console.log(gifURL);
   // We want to add that src to our storedGifs array that we declare on page load
   storedGifs.push(gifURL);
@@ -120,12 +111,13 @@ function saveGiphy(e) {
   // Store this string in our localstorage
   myStorage.setItem("gifs", stringifiedData);
 }
+
 //function to save Joke
 function saveJoke(e) {
   // myStorage.getitem(JokeAPICall);
   console.log("Save Joke");
   // Find the text of the joke that the user clicked on
-  var jokeText = jokeHolder.text();
+  var jokeText = e.target.innerHTML;
   console.log(jokeText);
   // We want to add that text to our storedJokes array that we declare on page load
   storedJokes.push(jokeText);
@@ -135,71 +127,6 @@ function saveJoke(e) {
   myStorage.setItem("joke", stringifiedData);
 }
 
-//Function to initialize our arrays
-function initializeArray() {
-  //Initializes our Gif storage array
-  if (storedGifs) {
-    // if our array exists in local storage. pull it
-    storedGifs = JSON.parse(storedGifs);
-  } else {
-    //if it doesn't exist, create a blank array
-    storedGifs = [];
-  }
-
-  //Initializes our Joke storage array
-  if (storedJokes) {
-    // if our array exists in local storage. pull it
-    storedJokes = JSON.parse(storedJokes);
-  } else {
-    // if it doesn't exist, create a blank array
-    storedJokes = [];
-  }
-}
-
-// Hides our main screen elements except for the title header
-function hideNewContent() {
-  $("#intro").addClass("hidden");
-  $("#contentWrapper").addClass("hidden");
-}
-
-// Shows our main screen elements
-function showNewContent() {
-  $("#intro").removeClass("hidden");
-  $("#contentWrapper").removeClass("hidden");
-}
-
-// hides our favorites content container
-function hideFavoriteDisplay() {
-  $("#favorites-display").addClass("hidden");
-}
-
-// shows our favorites content container
-function showFavoriteDisplay() {
-  $("#favorites-display").removeClass("hidden");
-}
-
-function hideFavGifContainer() {
-  $("#myFavGif").addClass("hidden");
-  // Clears out the gif container when we hide it so the next time it's loaded we don't get duplicates
-  $("myFavGif").empty();
-}
-
-function showFavGifContainer() {
-  $("#myFavGif").removeClass("hidden");
-}
-
-function hideFavJokeContainer() {
-  $("#myFavJoke").addClass("hidden");
-  // Clears out the joke container when we hide it so the next time it's loaded we don't get duplicates
-  $("myFavJoke").empty();
-}
-
-function showFavJokeContainer() {
-  $("#myFavJoke").removeClass("hidden");
-}
-
-//runs our initialize array function on page load
-initializeArray();
 
 //Instructions for DAN
 

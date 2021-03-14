@@ -132,3 +132,9 @@ display: block;
 .hidden {
   display: none;
 }
+
+#save2fave {
+  display: block;
+  border-style: solid;
+  border-width: 3px;
+}
