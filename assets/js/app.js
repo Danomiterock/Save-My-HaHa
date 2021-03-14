@@ -125,15 +125,15 @@ function saveJoke(e) {
   var stringifiedData = JSON.stringify(storedJokes);
   // Store this string in our localstorage
   myStorage.setItem("joke", stringifiedData);
-  if ()
+  
 }
 
 //target value if joke and gif
-var saveFavJokes = document.getElementById("fav-jokes-LS"); 
-var saveFaveGifs = document.getElementById("fav-gifs-LS");
+// var saveFavJokes = document.getElementById("fav-jokes-LS"); 
+// var saveFaveGifs = document.getElementById("fav-gifs-LS");
 
-saveFavJokes.on("click", saveJoke);
-saveFaveGifs.on("click", saveGiphy);
+// saveFavJokes.on("click", saveJoke);
+// saveFaveGifs.on("click", saveGiphy);
 
 //Instructions for DAN
 
