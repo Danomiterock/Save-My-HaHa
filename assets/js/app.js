@@ -128,8 +128,11 @@ function saveJoke(e) {
 }
 
 //target value if joke and gif
-var saveFavJokes = document.getElementById("fav-jokes-LS")
-var saveFaveGifs = document.getElementById("fav-gifs-LS")
+var saveFavJokes = document.getElementById("fav-jokes-LS"); 
+var saveFaveGifs = document.getElementById("fav-gifs-LS");
+
+saveFavJokes.on("click", saveJoke);
+saveFaveGifs.on("click", saveGiphy);
 
 //Instructions for DAN
 
