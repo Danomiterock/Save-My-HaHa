@@ -12,13 +12,13 @@
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
-    <!-- Custom CSS -->
     <!-- Indie Flower Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+    rel="stylesheet"
     />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <!-- CSS End -->
     <title>Save My Hahas</title>
@@ -113,15 +113,15 @@
         <button id="fav-gifs-LS">Save this Gif</button>
       </div>
       <br />
-      <div class="btn-favs">
-        <button style="width: 25%" id="saved-gif">
-          Show me my favorite gifs.
-        </button>
-        <button style="width: 25%" id="saved-joke">
-          Show me my favorite jokes.
-        </button>
-        <button style="width: 25%" id="reset">Show me something new.</button>
-      </div>
+    </div>
+    <div class="wrapper btn-favs"> <!--Moved out of normal wrapper so it doesn't get hidden-->
+      <button style="width: 25%" id="saved-gif">
+        Show me my favorite gifs.
+      </button>
+      <button style="width: 25%" id="saved-joke">
+        Show me my favorite jokes.
+      </button>
+      <button style="width: 25%" id="reset">Show me something new.</button>
     </div>
     <div id="favorites-display" class="wrapper">
       <div id="myFavGif" class="hidden">
