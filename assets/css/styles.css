@@ -137,4 +137,7 @@ display: block;
   display: block;
   border-style: solid;
   border-width: 3px;
+  height: 30px;
+  width: auto;
+  box-shadow: #0a0a0a;
 }
