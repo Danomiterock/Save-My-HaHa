@@ -92,7 +92,7 @@ function saveGiphy(e) {
   console.log(e);
   // e.target is going to be the img that is storing our gif
   // Find the src of the image that the user clicked on
-  var gifURL = e.target.getAttribute("src");
+  var gifURL = gifHolder.attr("src");
   console.log(gifURL);
   // We want to add that src to our storedGifs array that we declare on page load
   storedGifs.push(gifURL);
@@ -106,7 +106,7 @@ function saveJoke(e) {
   // myStorage.getitem(JokeAPICall);
   console.log("Save Joke");
   // Find the text of the joke that the user clicked on
-  var jokeText = e.target.innerHTML;
+  var jokeText = jokeHolder.text();
   console.log(jokeText);
   // We want to add that text to our storedJokes array that we declare on page load
   storedJokes.push(jokeText);
@@ -116,8 +116,10 @@ function saveJoke(e) {
   myStorage.setItem("joke", stringifiedData);
 }
 
-//Initializes our Gif storage array
+//Function to initialize our arrays
 function initializeArray() {
+
+  //Initializes our Gif storage array
   if (storedGifs) {
     // if our array exists in local storage. pull it
     storedGifs = JSON.parse(storedGifs);
