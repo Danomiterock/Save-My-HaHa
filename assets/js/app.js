@@ -13,17 +13,29 @@ var storedGifs = myStorage.getItem("gifs");
 var storedJokes = myStorage.getItem("jokes");
 
 // Variables target the save to favorites buttons
-var joke = $("#save-Joke");
-var giphy = $("#save-Gif");
+var joke = $("#fav-jokes-LS");
+var giphy = $("#fav-gifs-LS");
 
 //Variables to change screens to favorites/new content
-var displayFavGifs = $("#fav-gifs-LS")
-var displayFavJokes = $("#fav-jokes-LS")
+var displayFavGifs = $("#saved-gif")
+var displayFavJokes = $("#saved-joke")
 var displayNewContent =$("#reset")
 
 
 
 //Event Listeners
+
+// Event listeners on our "Show me" buttons.
+displayFavGifs.on("click", function() {
+
+})
+
+displayFavJokes.on("click", function() {
+
+})
+
+displayNewContent.on("click", )
+
 
 //Adds Event listener to our category buttons, when a button is clicked invokes the GiphyAPI and JokeAPI Functions.
 submitBtn.on("click", function(e) {
