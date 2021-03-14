@@ -6,19 +6,24 @@
 }
 
 * {
-box-sizing:border-box;
-/* width: 100%; */
-/* display: flex;
-justify-content: center; */
+box-sizing: border-box;
 
 }
 
-body {
-  position: absolute;
-  margin: 0;
-  /* padding: 10px;
-  margin: 10px; */
-  background-color: rgb(245, 250, 240);
+#background {
+background: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg")
+  50% no-repeat;
+background-size: cover;
+/* opacity: 0.5;
+filter: blur(3px); */
+height: 45vh;
+display: flex;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 }
 #test{
   text-align: center;
