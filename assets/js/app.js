@@ -21,23 +21,32 @@ var displayFavGifs = $("#saved-gif");
 var displayFavJokes = $("#saved-joke");
 var displayNewContent = $("#reset");
 
+//Favorites containers
+
+var myFavGif = $("#myFavGif")
+var myFavJoke = $("#myFavJoke")
+
 //Event Listeners
 
-// Event listeners on our "Show me" buttons.
+// Changes screen to hide our main content container, hide our fav jokes container, and show our fav gifs container, then it prints out from local storage
 displayFavGifs.on("click", function () {
   hideNewContent();
   showFavoriteDisplay();
   hideFavJokeContainer();
   showFavGifContainer();
+  printFavGifs()
 });
 
+//Hides all containers, shows fav jokes, prints fav jokes from local storage
 displayFavJokes.on("click", function () {
   hideNewContent();
   showFavoriteDisplay();
   hideFavGifContainer();
   showFavJokeContainer();
+  printFavJokes();
 });
 
+//hides our favorite screens, reenables main content.
 displayNewContent.on("click", function () {
   hideFavGifContainer();
   hideFavJokeContainer();
@@ -82,7 +91,7 @@ function GiphyAPICall(e) {
 function JokeAPICall(e) {
   //Grabs the data-joke from the clicked button
   var JokeCata = $(e.target).data("joke");
-  //JokeAPI URL, no APIKey needed, blacklist added to keep returns safe for work
+  //JokeAPI URL, no APIKey needed, blacklist added to attempt to keep returns safe for work.
   var JokeURL = `https://v2.jokeapi.dev/joke/${JokeCata}?blacklist=nsfw,sexist,racist`;
   //calls the JokeAPI
   fetch(JokeURL)
@@ -136,7 +145,7 @@ function saveJoke() {
   myStorage.setItem("joke", stringifiedData);
 }}
 
-//Function to initialize our arrays
+//Function to initialize our LS arrays
 function initializeArray() {
   //Initializes our Gif storage array
   if (storedGifs) {
@@ -157,13 +166,13 @@ function initializeArray() {
   }
 }
 
-// Hides our main screen elements except for the title header
+// Hides our main screen elements (cat buttons, joke display, gif display) except for the title header
 function hideNewContent() {
   $("#intro").addClass("hidden");
   $("#contentWrapper").addClass("hidden");
 }
 
-// Shows our main screen elements
+// Shows our main screen elements (cat buttons, joke display, gif display)
 function showNewContent() {
   $("#intro").removeClass("hidden");
   $("#contentWrapper").removeClass("hidden");
@@ -174,29 +183,31 @@ function hideFavoriteDisplay() {
   $("#favorites-display").addClass("hidden");
 }
 
-// shows our favorites content container
+// shows our favorites content container (contains our favgif and fav jokes containers)
 function showFavoriteDisplay() {
   $("#favorites-display").removeClass("hidden");
 }
 
+//hides our fav gif container
 function hideFavGifContainer() {
-  $("#myFavGif").addClass("hidden");
-  // Clears out the gif container when we hide it so the next time it's loaded we don't get duplicates
-  $("myFavGif").empty();
+  myFavGif.addClass("hidden");
+
 }
 
+//shows our fav gif container
 function showFavGifContainer() {
-  $("#myFavGif").removeClass("hidden");
+  myFavGif.removeClass("hidden");
 }
 
+//Hides our fav joke container
 function hideFavJokeContainer() {
-  $("#myFavJoke").addClass("hidden");
-  // Clears out the joke container when we hide it so the next time it's loaded we don't get duplicates
-  $("myFavJoke").empty();
+  myFavJoke.addClass("hidden");
+
 }
 
+//shows our fav joke container
 function showFavJokeContainer() {
-  $("#myFavJoke").removeClass("hidden");
+  myFavJoke.removeClass("hidden");
 }
 
 //runs our initialize array function on page load
@@ -215,3 +226,44 @@ initializeArray();
 //define items to be retrieved from storage
 // var giphValue = myStorage.getItem(GiphyAPICall);
 // var jokeValue = myStorage.getItem(JokeAPICall);
+
+/*    James Local Storage retrieval solution
+
+//function to print our locally stored Jokes to our favorites container
+function printFavJokes() {
+  // Empty our container so we don't get duplicates
+  myFavJoke.empty();
+  //Pull from local storage and parse it into a usable object
+  var retrievedJoke = JSON.parse(localStorage.getItem("joke"));
+  //runs below for each contained item in our local storage
+  retrievedJoke.forEach(function (joke) {
+    //Creates a p element
+    var createJokeEl = $("<p>");
+    //sets the text content to the stored joke string
+    createJokeEl.text(joke);
+    //Adds our class giving it a border + spacing
+    createJokeEl.addClass("printedJoke");
+    //appends our newly created element to the container.
+    myFavJoke.append(createJokeEl);
+  })
+}
+
+//function to print our locally stored Gifs to our favorites container.
+function printFavGifs() {
+  //Empty our containers so we don't get duplicates
+  myFavGif.empty();
+  //Pull from local storage and parse it into a usable object
+  var retrievedGifs = JSON.parse(localStorage.getItem("gifs"));
+  //runs below for each contained item in our local storage
+  retrievedGifs.forEach(function (gif) {
+    //creates an image element
+    var createGifEl = $("<img>");
+    //sets the source equal to the URL we have saved in local storage
+    createGifEl.attr("src", gif);
+    //adds our custom class to the element giving it spacing and setting it to be inline
+    createGifEl.addClass("printedGif");
+    //Appends the created element to the favorites container
+    myFavGif.append(createGifEl);
+  })
+}
+*/
