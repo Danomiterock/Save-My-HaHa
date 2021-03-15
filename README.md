@@ -20,16 +20,17 @@ THEN I can view the selection of favorited gifs and jokes
 ```
 
 ## Technogologies:
-CSS Framework: <a href="http://getskeleton.com/">Skeleton</a>
-API 1: <a href="https://sv443.net/jokeapi/v2/">JokeAPI</a>
+CSS Framework: <a href="http://getskeleton.com/">Skeleton</a><br>
+CSS Framework: <a href="https://get.foundation/sites/docs/installation.html">Foundation</a><br>
+API 1: <a href="https://sv443.net/jokeapi/v2/">JokeAPI</a><br>
 API 2: <a href="https://developers.giphy.com/docs/sdk">Giphy</a>
 
 ## Task/Role Breakdown:
 
-Stephanie - html/styles, functionality<br>
-Briana - create buttons tied to each category<br>
-James - API<br>
-Dan - storage
+Stephanie - html, styles, framework implementation<br>
+Briana - Buttons, layout, and CSS<br>
+James - API, Screen Transitions, general JS, and CSS related to JS functionality<br>
+Dan - Local Storage and Powerpoint.
 
 
 ## Wireframe:
