@@ -184,3 +184,16 @@ display: block;
     border: 1px solid black;
     color: white;
 }
+
+.printedJoke {
+  border: solid black 2px;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.printedGif {
+  display: inline-block;
+  margin: 5px;
+  margin-bottom: 10px;
+}
