@@ -227,7 +227,7 @@ initializeArray();
 // var giphValue = myStorage.getItem(GiphyAPICall);
 // var jokeValue = myStorage.getItem(JokeAPICall);
 
-/*    James Local Storage retrieval solution
+/*//James Local Storage retrieval solution
 
 //function to print our locally stored Jokes to our favorites container
 function printFavJokes() {
