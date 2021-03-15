@@ -202,14 +202,14 @@ function currentFavJoke() {
   array.forEach(element => {
     
   });
-})
+}
 
 function printFavJokes() {
   var X = JSON.parse(localStorage.getItem("joke"));
   x.forEach(function (storedJokes) {
   var createJoke = $("<p>")
   createJoke.text(x)
-  }
+  })
 
   // function printFavGifs() {
   //   var X = JSON.parse(localStorage.getItem("gifs"));
@@ -236,5 +236,7 @@ function printFavJokes() {
 // var saveFavJokes = document.getElementById("fav-jokes-LS"); 
 // var saveFaveGifs = document.getElementById("fav-gifs-LS");
 
-// saveFavJokes.on("click", saveJoke);
-// saveFaveGifs.on("click", saveGiphy);
+// saveFavJokes.on("click", saveJoke)
+// saveFaveGifs.on("click", saveGiphy){
+
+}
