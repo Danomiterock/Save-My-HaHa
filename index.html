@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS Start -->
-    <!-- Foundation CSS Framework -->
-    <link
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS Start -->
+  <!-- Foundation CSS Framework -->
+  <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
-    <!-- Indie Flower Font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
-    rel="stylesheet"
-    />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <!-- CSS End -->
-    <title>Save My Hahas</title>
-  </head>
+  <!-- Indie Flower Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- CSS End -->
+  <title>Save My Hahas</title>
+</head>
 
-  <!-- Start Placeholder HTML -->
-
-  <!-- <h1>My Hahas</h1> -->
-
-  <!-- <h2>Pick a category below!</h2>  -->
+<!-- Start Placeholder HTML -->
 
   <body class="text-center">
     <header>
@@ -117,33 +111,47 @@
       <button style="width: 25%" id="saved-gif">
         Show me my favorite gifs.
       </button>
-      <button style="width: 25%" id="saved-joke">
-        Show me my favorite jokes.
+      <button class="button testBtn" id="lucky" data-joke="Any" data-val="Random-funny">
+        I'm Feeling Lucky
       </button>
-      <button style="width: 25%" id="reset">Show me something new.</button>
     </div>
-    <div id="favorites-display" class="wrapper">
-      <div id="myFavGif" class="hidden">
-      </div>
-      <div id="myFavJoke" class="hidden">
-      </div>
+    <br />
+    <div id="save2fav">
+      <button id="fav-jokes-LS">Save this Joke</button>
+      <button id="fav-gifs-LS">Save this Gif</button>
     </div>
-    <!-- End Category Buttons -->
-    <!-- End Placeholder HTML -->
+    <br />
+  </div>
+  <div class="wrapper-btn-favs">
+    <!--Moved out of normal wrapper so it doesn't get hidden-->
+    <button id="saved-gif">
+      Show my favorite gifs.
+    </button>
+    <button id="saved-joke">
+      Show my favorite jokes.
+    </button>
+    <button id="reset">Show me something new.</button>
+  </div>
+  <div id="favorites-display" class="wrapper">
+    <div id="myFavGif" class="hidden">
+    </div>
+    <div id="myFavJoke" class="hidden">
+    </div>
+  </div>
+  <!-- End Category Buttons -->
+  <!-- End Placeholder HTML -->
 
-    <!-- Javascript Start -->
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <!-- Foundation CSS Framework JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
-      crossorigin="anonymous"
-    ></script>
-    <!-- Custom CSS -->
-    <script src="./assets/js/app.js"></script>
-    <!-- Javascript End -->
-  </body>
+  <!-- Javascript Start -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <!-- Foundation CSS Framework JS -->
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <!-- Custom CSS -->
+  <script src="./assets/js/app.js"></script>
+  <!-- Javascript End -->
+</body>
+
 </html>
