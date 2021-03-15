@@ -22,7 +22,6 @@ var displayFavJokes = $("#saved-joke");
 var displayNewContent = $("#reset");
 
 //Favorites containers
-
 var myFavGif = $("#myFavGif")
 var myFavJoke = $("#myFavJoke")
 
