@@ -30,7 +30,7 @@
 
   <!-- <h2>Pick a category below!</h2>  -->
 
-  <body class="text-center" id="test">
+  <body class="text-center">
     <header>
       <div class="container">
         <h1><strong>Save My Hahas</strong></h1>
@@ -47,22 +47,21 @@
     <div id="contentWrapper" class="wrapper">
       <!-- Start Gif Holder -->
       <div id="gifContainer">
-        <img id="testGifHolder" src="" />
+        <img id="gifHolder" src="" />
       </div>
       <!-- End Gif Holder -->
 
       <!-- Start Joke Holder -->
       <div class="jokeContainer">
-        <p id="testJokeHolder"></p>
+        <p id="jokeHolder"></p>
         <br />
-        <!--<p id="testJokeHolder2"></p>-->
       </div>
       <!-- End Joke Holder -->
 
       <!-- Start Category Buttons -->
       <div class="btnContainer">
         <button
-          class="button testBtn"
+          class="button btn"
           id="misc"
           data-joke="Misc"
           data-val="Misc-funny"
@@ -71,7 +70,7 @@
         </button>
 
         <button
-          class="button testBtn"
+          class="button btn"
           id="programming"
           data-joke="Programming"
           data-val="Programming-funny"
@@ -79,11 +78,11 @@
           Programming
         </button>
 
-        <button class="button testBtn" id="pun" data-joke="Pun" data-val="Pun">
+        <button class="button btn" id="pun" data-joke="Pun" data-val="Pun">
           Pun
         </button>
         <button
-          class="button testBtn"
+          class="button btn"
           id="spooky"
           data-joke="Spooky"
           data-val="Spooky-funny"
@@ -91,7 +90,7 @@
           Spooky
         </button>
         <button
-          class="button testBtn"
+          class="button btn"
           id="christmas"
           data-joke="Christmas"
           data-val="Christmas-funny"
@@ -99,7 +98,7 @@
           Christmas
         </button>
         <button
-          class="button testBtn"
+          class="button btn"
           id="lucky"
           data-joke="Any"
           data-val="Random-funny"
@@ -114,7 +113,7 @@
       </div>
       <br />
     </div>
-    <div class="wrapper btn-favs"> <!--Moved out of normal wrapper so it doesn't get hidden-->
+    <div class="wrapper btn-favs">
       <button style="width: 25%" id="saved-gif">
         Show me my favorite gifs.
       </button>
