@@ -11,7 +11,7 @@ An app that generates a joke and related gif from a category selected by the use
 
 ```
 GIVEN a Gif and Joke generator
-WHEN I gets on site, I can select a category from buttons
+WHEN I get on the site, I can select a category from buttons
 THEN a joke and gif from that category are presented,
 WHEN the joke and gif are presented
 THEN I can select my favorites
@@ -39,3 +39,9 @@ Dan - Local Storage and Powerpoint.
 ## User flowchart:
 
 <img src="assets\images\UserFlow.jpg" alt="User Flow Diagram">
+
+## Future Upgrades
+Ability to remove specific favorites. <br>
+mobile responsiveness. <br>
+improved UI design for ease of user interaction <br>
+Toggle for JokeAPI to swap between SFW and NSFW jokes.
