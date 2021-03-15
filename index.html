@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- CSS Start -->
   <!-- Foundation CSS Framework -->
-  <!-- <link
+  <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
-    /> -->
+    />
   <!-- Indie Flower Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
@@ -24,57 +24,92 @@
 
 <!-- Start Placeholder HTML -->
 
-<!-- <h1>My Hahas</h1> -->
+  <body class="text-center">
+    <header>
+      <div class="container">
+        <h1><strong>Save My Hahas</strong></h1>
+        <p id="intro" class="description">
+          Need a laugh? Click one of the category buttons below to get a joke
+          and gif.
+          <br />
+          Save your favorite jokes or gifs to view later
+          (especially when you'd like to remain calm.)
+        </p>
+      </div>
+    </header>
 
-<!-- <h2>Pick a category below!</h2>  -->
+    <div id="contentWrapper" class="wrapper">
+      <!-- Start Gif Holder -->
+      <div id="gifContainer">
+        <img id="gifHolder" src="" />
+      </div>
+      <!-- End Gif Holder -->
 
-<body class="text-center" id="test">
-  <header>
-    <div class="container">
-      <h1><strong>Save My Hahas</strong></h1>
-      <p id="intro" class="description">
-        Need a laugh? Click one of the category buttons below to get a joke
-        and gif.
+      <!-- Start Joke Holder -->
+      <div class="jokeContainer">
+        <p id="jokeHolder"></p>
         <br />
-        Save your favorite jokes or gifs to view later
-        (especially when you'd like to remain calm.)
-      </p>
-    </div>
-  </header>
+      </div>
+      <!-- End Joke Holder -->
 
-  <div id="contentWrapper" class="wrapper">
-    <!-- Start Gif Holder -->
-    <div id="gifContainer">
-      <img id="testGifHolder" src="" />
-    </div>
-    <!-- End Gif Holder -->
+      <!-- Start Category Buttons -->
+      <div class="btnContainer">
+        <button
+          class="button btn"
+          id="misc"
+          data-joke="Misc"
+          data-val="Misc-funny"
+        >
+          Misc
+        </button>
 
-    <!-- Start Joke Holder -->
-    <div class="jokeContainer">
-      <p id="testJokeHolder"></p>
+        <button
+          class="button btn"
+          id="programming"
+          data-joke="Programming"
+          data-val="Programming-funny"
+        >
+          Programming
+        </button>
+
+        <button class="button btn" id="pun" data-joke="Pun" data-val="Pun">
+          Pun
+        </button>
+        <button
+          class="button btn"
+          id="spooky"
+          data-joke="Spooky"
+          data-val="Spooky-funny"
+        >
+          Spooky
+        </button>
+        <button
+          class="button btn"
+          id="christmas"
+          data-joke="Christmas"
+          data-val="Christmas-funny"
+        >
+          Christmas
+        </button>
+        <button
+          class="button btn"
+          id="lucky"
+          data-joke="Any"
+          data-val="Random-funny"
+        >
+          I'm Feeling Lucky
+        </button>
+      </div>
       <br />
-      <!--<p id="testJokeHolder2"></p>-->
+      <div id="save2fav">
+        <button id="fav-jokes-LS">Save this Joke</button>
+        <button id="fav-gifs-LS">Save this Gif</button>
+      </div>
+      <br />
     </div>
-    <!-- End Joke Holder -->
-
-    <!-- Start Category Buttons -->
-    <div class="btnContainer">
-      <button class="button testBtn" id="misc" data-joke="Misc" data-val="Misc-funny">
-        Misc
-      </button>
-
-      <button class="button testBtn" id="programming" data-joke="Programming" data-val="Programming-funny">
-        Programming
-      </button>
-
-      <button class="button testBtn" id="pun" data-joke="Pun" data-val="Pun">
-        Pun
-      </button>
-      <button class="button testBtn" id="spooky" data-joke="Spooky" data-val="Spooky-funny">
-        Spooky
-      </button>
-      <button class="button testBtn" id="christmas" data-joke="Christmas" data-val="Christmas-funny">
-        Christmas
+    <div class="wrapper btn-favs">
+      <button style="width: 25%" id="saved-gif">
+        Show me my favorite gifs.
       </button>
       <button class="button testBtn" id="lucky" data-joke="Any" data-val="Random-funny">
         I'm Feeling Lucky
