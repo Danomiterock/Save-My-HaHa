@@ -198,12 +198,31 @@ function showFavJokeContainer() {
   $("#myFavJoke").removeClass("hidden");
 }
 
+function currentFavJoke() {
+  array.forEach(element => {
+    
+  });
+})
+
+function printFavJokes() {
+  var X = JSON.parse(localStorage.getItem("joke"));
+  x.forEach(function (storedJokes) {
+  var createJoke = $("<p>")
+  createJoke.text(x)
+  }
+
+  // function printFavGifs() {
+  //   var X = JSON.parse(localStorage.getItem("gifs"));
+  //   x.forEach(function (storedGifs) {
+  //   var createGif = $("<p>")
+  //   createGif.text(x)
+  //   }
+
 //runs our initialize array function on page load
-initializeArray();
+// initializeArray();
 
 //Instructions for DAN
 
-//When creating the local storage retrieval target the element $<"#myFavGif"> and $<"#myFavJoke"> (that element wont exist just yet until Bri/Steph update the HTML side of things) Have your stuff output to there and we'll tie it all up later. The favorite buttons don't have their ID's setup yet, but their ids will be fav-gifs-LS and fav-jokes-LS
 
 //if neither is selected return to homepage
 // take input from selected button and place in an array in storage. Items in area are stored in class of joke or gif
