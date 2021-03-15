@@ -3,9 +3,9 @@
 //Giphy API Key
 var giphyAPIKey = "XRfxNr7yL9ahmuuB5NE74GlaO9Pem6su";
 
-var submitBtn = $(".testBtn");
-var gifHolder = $("#testGifHolder");
-var jokeHolder = $("#testJokeHolder");
+var submitBtn = $(".btn");
+var gifHolder = $("#gifHolder");
+var jokeHolder = $("#jokeHolder");
 
 //Storage variables
 var myStorage = window.localStorage;
@@ -104,14 +104,14 @@ function JokeAPICall(e) {
 // Renders our recieved joke
 function printJoke(jokeData) {
   // Clears our previous Jokes
-  $("#testJokeHolder").text("");
+  jokeHolder.text("");
 
   // If single-type joke is recieved from API
   if (jokeData.joke) {
-    $("#testJokeHolder").text(jokeData.joke);
+    jokeHolder.text(jokeData.joke);
   } else {
     //else if double-type joke
-    $("#testJokeHolder").html(jokeData.setup + " " + jokeData.delivery);
+    jokeHolder.html(jokeData.setup + " " + jokeData.delivery);
   }
 }
 
