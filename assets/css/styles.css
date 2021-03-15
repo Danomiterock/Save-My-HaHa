@@ -10,11 +10,10 @@ box-sizing:border-box;
 /* width: 100%; */
 /* display: flex;
 justify-content: center; */
-
 }
 
 body {
-  position: absolute;
+  
   margin: 0;
   /* padding: 10px;
   margin: 10px; */
@@ -93,6 +92,7 @@ width: 1000px;
 margin-left:auto;
 margin-right:auto;
 float :none;
+max-width: 100%;
 }
 
 .btnContainer{
